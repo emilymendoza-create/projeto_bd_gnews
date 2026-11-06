@@ -13,7 +13,7 @@ create table public.jornalista(
   FK_usuario                 varchar(255) not null,
   registro_profissional      varchar(255) null,
   biografia                  character varying(255),
-  especialidade              varchar(255) null
+  especialidade              varchar(255) null,
 );
 
 create table public.comentario(
@@ -21,8 +21,8 @@ create table public.comentario(
   registro_profissional   varchar(255) not null,
   biografia               varchar(255) null,
   entrevista              character varying(255),
-  especialidade           varchar(255) null
-  fk_noticia              int
+  especialidade           varchar(255) null,
+  fk_noticia              int,
 );
 
 create table public.noticia (
@@ -37,5 +37,14 @@ create table public.noticia (
   data_criação         timestamp,
 );
 
+create table public.historico_revisão(
+  id_historico serial primary key,
+  id_noticia              bigint not null,
+  id_editor               bigint not null,
+  observação_revisão      text not null,
+  status_aplicado         status_noticia_enum not null,
+  data_alteração          timestamp,
+  fk_noticia              int,
+);
 
 
