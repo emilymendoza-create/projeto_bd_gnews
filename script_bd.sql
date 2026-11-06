@@ -24,3 +24,18 @@ create table public.comentario(
   especialidade           varchar(255) null
   fk_noticia              int
 );
+
+create table public.noticias (
+  id_noticia serial primary key,
+  titulo               varchar(255) not null,
+  subtitulo            varchar(255) not null,
+  conteudo_texto       varchar(255) null,
+  status               character varying(255),
+  id_jornalista        varchar(255) null,
+  data_publicação      varchar(255) null,
+  entrevista           character varying(255),
+  artigo               varchar(255) null,
+);
+
+
+
