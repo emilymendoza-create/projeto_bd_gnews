@@ -47,4 +47,13 @@ create table public.historico_revisão(
   fk_noticia              int,
 );
 
+create table public.midia_noticia(
+  id_midia serial primary key,
+  id_noticia              bigint not null,
+  tipo_midia              tipo_midia_enum not null,
+  url_arquivo             varchar(255) not null,
+  legenda                 varchar(255),
+  data_upload             timestamp,
+  fk_noticia              int,
+);
 
