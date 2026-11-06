@@ -78,3 +78,8 @@ create table public.categoria(
   descrição                   varchar (255) not null,
   slug                        varchar (255) not null,
 );
+
+create table public.tag(
+  id_tag serial primary key,
+  nome_tag              varchar not null,
+);
