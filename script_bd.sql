@@ -66,8 +66,15 @@ create table public.noticia_tag(
 create table public.curtida_noticia(
   id_curtida serial primary key,
   id_noticia              bigint not null,
-  id_usuario              tipo_midia_enum not null,
-  data_reação             varchar(255) not null,
+  id_usuario              bigint not null,
+  data_reação             timestamp,
   fk_noticia              int,
   fk_usuario              int,
+);
+
+create table public.categoria(
+  id_categoria serial primary key,
+  nome_categoria              varchar (255) not null,
+  descrição                   varchar (255) not null,
+  slug                        varchar (255) not null,
 );
