@@ -60,5 +60,14 @@ create table public.midia_noticia(
 create table public.noticia_tag(
   id_noticia serial primary key,
   id_tag              bigint not null,
-  
+  fk_noticia              int,
+);
+
+create table public.curtida_noticia(
+  id_curtida serial primary key,
+  id_noticia              bigint not null,
+  id_usuario              tipo_midia_enum not null,
+  data_reação             varchar(255) not null,
+  fk_noticia              int,
+  fk_usuario              int,
 );
