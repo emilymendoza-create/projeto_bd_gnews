@@ -25,16 +25,16 @@ create table public.comentario(
   fk_noticia              int
 );
 
-create table public.noticias (
+create table public.noticia (
   id_noticia serial primary key,
   titulo               varchar(255) not null,
   subtitulo            varchar(255) not null,
-  conteudo_texto       varchar(255) null,
-  status               character varying(255),
-  id_jornalista        varchar(255) null,
-  data_publicação      varchar(255) null,
-  entrevista           character varying(255),
-  artigo               varchar(255) null,
+  conteudo_texto       text not null,,
+  status               status_noticia_enum not null,
+  id_jornalista        bigint not null,
+  id_categoria         bigint not null,
+  data_publicação      datetime,
+  data_criação         timestamp,
 );
 
 
