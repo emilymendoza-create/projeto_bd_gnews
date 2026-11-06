@@ -69,7 +69,7 @@ create table public.curtida_noticia(
   id_usuario              bigint not null,
   data_reação             timestamp,
   fk_noticia              int,
-  fk_usuario              int,
+  fk_usuario              int
 );
 
 create table public.categoria(
