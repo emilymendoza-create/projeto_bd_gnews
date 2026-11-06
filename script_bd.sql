@@ -57,3 +57,8 @@ create table public.midia_noticia(
   fk_noticia              int,
 );
 
+create table public.noticia_tag(
+  id_noticia serial primary key,
+  id_tag              bigint not null,
+  
+);
